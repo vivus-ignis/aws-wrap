@@ -8,7 +8,7 @@ module Utils
   end
 
   def is_debug_on?
-    ENV.has_key? "DEBUG"
+    ENV.has_key?("DEBUG") && ! ENV["DEBUG"].empty?
   end
 
   def dputs(msg : String)
