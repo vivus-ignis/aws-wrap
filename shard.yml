@@ -1,0 +1,13 @@
+name: aws-wrap
+version: 0.1.0
+
+authors:
+  - your-name-here <your-email-here>
+
+targets:
+  aws-wrap:
+    main: src/aws-wrap.cr
+
+crystal: 0.27.0
+
+license: MIT
