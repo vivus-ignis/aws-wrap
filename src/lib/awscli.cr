@@ -13,13 +13,15 @@ module Awscli
 
   def run(cmd : Array(String)) : {String, String | Nil}
     command = "aws"
-    args = cmd
+    args = Process.parse_arguments(cmd.join(' '))
 
     output = IO::Memory.new
     error_output = IO::Memory.new
 
+    Utils.dputs "args: #{args}"
+
     ret = Process.run(command, args,
-                      shell: true,
+                      shell: false,
                       output: output,
                       error: error_output)
 

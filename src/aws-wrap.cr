@@ -29,6 +29,7 @@ module Aws::Wrap
 
   deploy_cmd = deploy_cmd + imported_outputs
 
+  Utils.dputs "raw ARGV: '#{ARGV}'"
   Utils.dputs "deployment cmd : '#{deploy_cmd.join(" ")}'"
   _, error = Awscli.run deploy_cmd
   Utils.die "Deployment of the stack #{stack_name} has failed:\n#{error}" unless error.nil?
